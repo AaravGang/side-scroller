@@ -11,7 +11,7 @@ win = pygame.display.set_mode((W, H))
 pygame.display.set_caption("Side Scroller")
 run = True
 speed = 30
-bg = pygame.image.load("bg.jpeg")
+bg = pygame.image.load("static/bg.jpeg")
 bgX = 0
 bgX2 = bg.get_width()
 score = 0
@@ -22,10 +22,10 @@ lives = 3
 
 class saw(object):
     images = [
-        pygame.image.load("SAW0.png"),
-        pygame.image.load("SAW1.png"),
-        pygame.image.load("SAW2.png"),
-        pygame.image.load("SAW3.png"),
+        pygame.image.load("static/SAW0.png"),
+        pygame.image.load("static/SAW1.png"),
+        pygame.image.load("static/SAW2.png"),
+        pygame.image.load("static/SAW3.png"),
     ]
     
     def __init__(self, x, y, w, h):
@@ -46,27 +46,27 @@ class saw(object):
 
 
 class wood(saw):
-    images = pygame.image.load("spike.png")
+    images = pygame.image.load("static/spike.png")
     
     def draw(self):
         win.blit(self.images, (self.x, self.y))
 
 
 class player(object):
-    run = [pygame.image.load((str(x) + ".png")) for x in range(8, 16)]
-    jump = [pygame.image.load((str(x) + ".png")) for x in range(1, 8)]
+    run = [pygame.image.load(("static/"+str(x) + ".png")) for x in range(8, 16)]
+    jump = [pygame.image.load(("static/"+str(x) + ".png")) for x in range(1, 8)]
     slide = [
-        pygame.image.load(("S1.png")),
-        pygame.image.load(("S2.png")),
-        pygame.image.load(("S2.png")),
-        pygame.image.load(("S2.png")),
-        pygame.image.load(("S2.png")),
-        pygame.image.load(("S2.png")),
-        pygame.image.load(("S2.png")),
-        pygame.image.load(("S2.png")),
-        pygame.image.load(("S3.png")),
-        pygame.image.load(("S4.png")),
-        pygame.image.load(("S5.png")),
+        pygame.image.load(("static/S1.png")),
+        pygame.image.load(("static/S2.png")),
+        pygame.image.load(("static/S2.png")),
+        pygame.image.load(("static/S2.png")),
+        pygame.image.load(("static/S2.png")),
+        pygame.image.load(("static/S2.png")),
+        pygame.image.load(("static/S2.png")),
+        pygame.image.load(("static/S2.png")),
+        pygame.image.load(("static/S3.png")),
+        pygame.image.load(("static/S4.png")),
+        pygame.image.load(("static/S5.png")),
     ]
     jumpList = [
         1,
@@ -179,7 +179,7 @@ class player(object):
         -4,
         -4,
     ]
-    gameOverImg = pygame.image.load("0.png")
+    gameOverImg = pygame.image.load("static/0.png")
     
     def __init__(self, x, y, width, height):
         self.x = x
